@@ -1,19 +1,32 @@
-import dataJson from "../services/data.json"
-import CountriesList from "./CountriesList"
-import "../styles/App.scss"
-import Filters from "./Filters"
+import dataJson from "../services/data.json";
+import CountriesList from "./CountriesList";
+import "../styles/App.scss";
+import Filters from "./Filters";
 import { useState } from "react";
 
 
 function App() {
-const [searchValue, setSearchValue] = useState("")
+const [searchValue, setSearchValue] = useState("");
+const [continent, setContinent] = useState ("all");
 
 const changeSearch = (value) =>{ 
-  setSearchValue(value.toLowerCase())
-}
+  setSearchValue(value.toLowerCase());
+};
 
-const filterCountry = dataJson.filter(country => country.name.common.toLowerCase().includes(searchValue))
-//console.log(dataJson)
+const changeContinent = (value) =>{
+  setContinent (value);
+};
+
+
+const filterCountry = dataJson.filter ((item) => {
+  item.name.common.toLowerCase().includes(searchValue);
+  continent === "all" || item.continents.includes(continent);
+});
+
+
+
+
+
 
   return (
     <>
@@ -22,7 +35,7 @@ const filterCountry = dataJson.filter(country => country.name.common.toLowerCase
     <p>Explore information about countries, capitals, and flags. Add new countries and filter through the list!</p>
     </header>
     <main >
-     <Filters changeSearch = {changeSearch}/>
+     <Filters changeSearch = {changeSearch} changeContinent={changeContinent} />
      <CountriesList List = {filterCountry}/>
     </main>
     
