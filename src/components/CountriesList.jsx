@@ -1,17 +1,17 @@
 import CountryCard from "./CountryCard";
 
-function ListCountries({countriesList}) {
-const countriesItemHtml = countriesList.map(item =>{
-  return <CountryCard/>
+function CountriesList({List}) {
+const ListItemHtml = List.map(item =>{
+    return <CountryCard key={item.name.common} countryData ={item}/>
 
 });
 
 
   return (
-    <section>
-    {countriesItemHtml}
+    <section  className="card" >
+      {ListItemHtml}
     </section>
   )
 }
 
-export default ListCountries
+export default CountriesList
