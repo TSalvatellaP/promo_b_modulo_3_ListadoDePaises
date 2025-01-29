@@ -1,5 +1,3 @@
-
-
 function CountryCard({countryData}) {
   return (
    
@@ -12,5 +10,10 @@ function CountryCard({countryData}) {
   
   )
 }
+/*
+CountryCard.PropTypes={
+  countryData: PropTypes.object
+
+}*/
 
 export default CountryCard

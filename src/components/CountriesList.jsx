@@ -13,5 +13,10 @@ const ListItemHtml = List.map(item =>{
     </section>
   )
 }
+/*
+CountriesList.PropTypes={
+  List: PropTypes.array
+
+}*/
 
 export default CountriesList

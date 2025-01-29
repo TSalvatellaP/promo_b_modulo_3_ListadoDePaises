@@ -1,8 +1,24 @@
+function Filters({changeSearch}) {
+  const handleInput = (ev)=>{
+    changeSearch(ev.target.value)
 
+  }
 
-function Filters() {
   return (
-    <div>Filters</div>
+    <>
+    <h2>Filters</h2>
+    <div>
+      <h4>By Country</h4>
+      <form action="">
+      <input type="text" onChange={handleInput} />
+      </form>
+    </div>
+    
+    <div>
+      <h4>By Continent</h4>
+      <select name="" id=""></select>
+    </div>
+   </>
   )
 }
 
