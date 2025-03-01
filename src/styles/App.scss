@@ -1,33 +1,69 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 2rem auto; /* Aumentamos el margen para mejor espaciado */
   padding: 2rem;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+  background-color: #f4f4f4; /* Fondo suave */
 }
-.card{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr ;
-  grid-template-rows: 1fr 1fr 1fr 1fr ;
-  gap: 15px;
-}
-.article{
-  padding: 15px;
+.filters{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid gray;
-  border-radius: 3px;
-  gap: 5px;
-
+  gap: 15px;
+  margin-bottom: 45px;
 }
-.btn{
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsividad mejorada */
+  gap: 1.5rem; /* Espaciado ajustado */
+}
+
+.article {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Mejor distribución del contenido */
+  align-items: center;
+  border: 1px solid #ddd; /* Borde más sutil */
+  border-radius: 8px; /* Bordes más redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: white; /* Fondo blanco para las tarjetas */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.article:hover {
+  transform: translateY(-5px); /* Elevación al pasar el ratón */
+}
+
+.btn {
   color: white;
-  margin: 5px;
-  width: 25px;
-  height: 25px;
-  align-self: flex-end;
-  background-color: red;
+  background-color: #e74c3c; /* Rojo más atractivo */
+  border: none;
   border-radius: 50%;
-  border: 0;
+  width: 30px;
+  height: 30px;
+  align-self: flex-end;
+  cursor: pointer; /* Cursor de puntero */
+  transition: background-color 0.3s ease; /* Transición de color */
+}
+
+.btn:hover {
+  background-color: #c0392b; /* Rojo más oscuro al pasar el ratón */
+}
+
+.article h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.article h3 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.article p {
+  font-size: 2rem; /* Ajusta el tamaño de la bandera */
+  margin-bottom: 1rem;
 }

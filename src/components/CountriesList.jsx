@@ -1,4 +1,5 @@
 import CountryCard from "./CountryCard";
+import PropTypes from 'prop-types';
 
 function CountriesList({List}) {
 const ListItemHtml = List.map(item =>{
@@ -13,10 +14,14 @@ const ListItemHtml = List.map(item =>{
     </section>
   )
 }
-/*
-CountriesList.PropTypes={
-  List: PropTypes.array
 
-}*/
+CountriesList.propTypes = {
+  List: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.shape({
+      common: PropTypes.string.isRequired,
+    }).isRequired,
+   
+  })).isRequired,
+};
 
 export default CountriesList
